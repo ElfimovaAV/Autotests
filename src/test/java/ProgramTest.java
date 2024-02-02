@@ -37,7 +37,7 @@ public class ProgramTest {
     }
 
     @Test
-    void autorization() throws InterruptedException {
+    void autorization(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //        WebElement loginField = driver.findElement(By.xpath("//*[@type='text']"));
 //        WebElement passwordField = driver.findElement(By.xpath("//*[@type='password']"));
