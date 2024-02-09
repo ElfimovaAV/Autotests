@@ -15,6 +15,7 @@
         <junit.version>5.9.0</junit.version>
         <surefire.version>2.22.2</surefire.version>
         <selenide.version>7.0.4</selenide.version>
+        <allure.junit.version>2.22.1</allure.junit.version>
     </properties>
     <!-- Архивирование -->
     <packaging>jar</packaging>
@@ -44,9 +45,22 @@
             <artifactId>selenide</artifactId>
             <version>${selenide.version}</version>
         </dependency>
-
-
-
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure.junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.16.1</version>
+        </dependency>
 
     </dependencies>
 
@@ -69,7 +83,20 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
             </plugin>
+            <plugin>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-maven</artifactId>
+            <version>2.12.0</version>
+            <configuration>
+                <!-- На момент написания лекции соответствующий архив не доступен,
+                закомментируйте строку-->
+                <!--<reportVersion>2.4.1</reportVersion>-->
+                <!-- Добавим адрес директории для генератора отчета -->
+                <buildDirectory>C:\Users\admin\Documents\Тестирование\Автоматизация тестирования\Seminars\Autotesting\Autotesting</buildDirectory>
+            </configuration>
+        </plugin>
         </plugins>
+
     </build>
 
     <!-- Репозитории -->
